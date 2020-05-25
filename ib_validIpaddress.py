@@ -33,6 +33,6 @@ class Solution:
                         l.append(s)
                     s=A
         return l
-
+        
 res = Solution()
 print(res.restoreIpAddresses(""))
