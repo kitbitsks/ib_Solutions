@@ -1,13 +1,13 @@
 # Definition for singly-linked list.
 # class ListNode:
-#	def __init__(self, x):
-#		self.val = x
-#		self.next = None
+#    def __init__(self, x):
+#        self.val = x
+#        self.next = None
 
 class Solution:
-	# @param A : head node of linked list
-	# @param B : head node of linked list
-	# @return the head node in the linked list
+    # @param A : head node of linked list
+    # @param B : head node of linked list
+    # @return the head node in the linked list
     def __init__(self):
         self.head = None
 
@@ -22,7 +22,7 @@ class Solution:
         last.next = new_node
         return self.head
         
-	def mergeTwoLists(self, A, B):
+    def mergeTwoLists(self, A, B):
         mergedList = Solution()
         while (A is not None and B is not None):
             if A.val < B.val:
