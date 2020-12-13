@@ -7,24 +7,11 @@
 class Solution:
     # @param A : head node of linked list
     # @return the head node in the linked list
-    def __init__(self):
-        self.head = None
-
-    def addElement(self,valueToBeAdded):
-        new_node = ListNode(valueToBeAdded)
-        if self.head is None:
-            self.head = new_node
-            return
-        temp = self.head
-        while temp.next is not None:
-            temp = temp.next
-        temp.next = new_node
         
     def solve(self, A):
         oddArr = []
         evenArr = []
-        temp = self.head
-
+        temp = A
         while temp is not None:
             if (temp.val %2) == 0:
                 evenArr.append(temp.val)
@@ -32,22 +19,19 @@ class Solution:
                 oddArr.append(temp.val)
             temp = temp.next
         evenArr = evenArr[::-1]
-        i = j = 0
+        i = 0
+        j = 0
         k = 1
         totalLength = len(oddArr) + len(evenArr)
-        # finalArr = []
-        newListForReverse = Solution()
-        returningList = newListForReverse
+        head_node = A
+        returnList = head_node
         while k <= totalLength:
             if k%2 == 0:
-                newListForReverse.addElement(evenArr[j])
-                # finalArr.append(evenArr[j])
+                head_node.val = (ListNode(evenArr[j])).val
                 j+=1
             else:
-                newListForReverse.addElement(oddArr[i])
-                # finalArr.append(oddArr[j])
+                head_node.val = (ListNode(oddArr[i])).val
                 i+=1
-            # newListForReverse = newListForReverse.next
+            head_node = head_node.next
             k+=1
-        
-        return returningList
+        return returnList
